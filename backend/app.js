@@ -8,7 +8,6 @@ const BoxLabelRouter = require('./routes/BoxLabelRouter') ;
 const InspectionRouter = require('./routes/InspectionRouter') ;
 const cookieParser = require('cookie-parser');
 const path =  require('path') ;
-const port = 3000;
 const authRoutes = require('./routes/authRoutes');
 require('dotenv').config();
 // const jwt = require('jsonwebtoken');
