@@ -1,0 +1,134 @@
+.form-page {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f0f4f8 0%, #e8edf3 100%);
+  padding-bottom: 48px;
+}
+
+.form-page-header {
+  text-align: center;
+  padding: 36px 20px 28px;
+}
+
+.form-page-header h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #1a2332;
+}
+
+.form-page-header p {
+  color: #64748b;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.verification-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .verification-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.verification-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  border: 1px solid #e8ecf1;
+}
+
+.card-header {
+  padding: 16px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.3px;
+}
+
+.card-header.lot-traveller {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.card-header.box-label {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+}
+
+.card-icon {
+  font-size: 1.2rem;
+}
+
+.card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-field input {
+  padding: 11px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.submit-area {
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px 0;
+}
+
+.btn-verify {
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+  border: none;
+  padding: 14px 48px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.3);
+  transition: all 0.2s;
+}
+
+.btn-verify:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.4);
+}
+
+.inspection-section {
+  margin-top: 16px;
+  border-top: 2px dashed #cbd5e1;
+  padding-top: 8px;
+}

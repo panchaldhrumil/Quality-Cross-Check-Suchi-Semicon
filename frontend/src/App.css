@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.container{
+  background-color: rgb(0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+}
+
+.card{
+  width: 70vw;
+  height: 80vh;
+background-color: rgb(90, 74, 74);
+}
+
+/* input{
+  width: ;
+} */
