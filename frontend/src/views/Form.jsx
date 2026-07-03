@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form1 from './Form1';
 import './Form.css';
+import { VITE_API_URL } from '../config';
 
 const Form = () => {
     const [showElement, setshowElement] = useState(false);

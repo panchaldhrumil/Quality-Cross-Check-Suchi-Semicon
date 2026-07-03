@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import { VITE_API_URL } from '../config';
+import React, { useState } from 'react';
+import { API_URL } from '../config';
 
 const ForgetPassword = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
 
   const handleSendOTP = async () => {
     try {
-      const response = await fetch(`${VITE_API_URL}/api/auth/send-otp`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch(`${API_URL}/api/auth/send-otp`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        alert("OTP sent successfully!");
-        console.log("OTP:", data.otp); // for testing only — remove in production
+        alert('OTP sent successfully!');
+        localStorage.setItem('resetEmail', email);
       } else {
-        alert("Error: " + data.message);
+        alert('Error: ' + data.message);
       }
     } catch (error) {
-      alert("Something went wrong: " + error.message);
+      alert('Something went wrong: ' + error.message);
     }
   };
 

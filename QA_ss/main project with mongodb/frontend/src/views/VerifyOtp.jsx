@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { VITE_API_URL } from '../config';
+import { API_URL } from '../config';
 
 const VerifyOtp = () => {
   const [otp, setOtp] = useState('');
@@ -10,7 +10,7 @@ const VerifyOtp = () => {
 
     const email = localStorage.getItem('resetEmail');
 
-    const res = await fetch(`${VITE_API_URL}/api/reset-password`, {
+    const res = await fetch(`${API_URL}/api/reset-password`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, otp, newPassword }),
@@ -24,24 +24,24 @@ const VerifyOtp = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
       <h2>Verify OTP & Reset Password</h2>
-      <input
-        type="text"
-        placeholder="Enter OTP"
-        required
-        value={otp}
-        onChange={(e) => setOtp(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="New Password"
-        required
-        value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
-      />
-      <button type="submit">Reset Password</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter OTP"
+          value={otp}
+          onChange={(e) => setOtp(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="New Password"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+        />
+        <button type="submit">Reset Password</button>
+      </form>
+    </div>
   );
 };
 

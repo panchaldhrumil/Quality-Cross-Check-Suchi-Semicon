@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Form1.css';
-import { VITE_API_URL } from '../config';
+import { API_URL } from '../config';
 
 const emptyTube = () => ({
     id: Date.now() + Math.random(),
@@ -64,7 +64,7 @@ const Form1 = ({ lotInfo }) => {
 
         setLoading(true);
         try {
-            const res = await fetch(`${VITE_API_URL}/api/inspection`, {
+            const res = await fetch(`${API_URL}/api/inspection`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
@@ -113,7 +113,6 @@ const Form1 = ({ lotInfo }) => {
                 )}
             </div>
 
-            {/* PHYSICAL LOT - TUBES */}
             <div className="section-card">
                 <div className="section-title">Physical Lot — Tubes</div>
                 <div className="section-body">
@@ -149,7 +148,6 @@ const Form1 = ({ lotInfo }) => {
                 </div>
             </div>
 
-            {/* PHYSICAL LOT - TAPES */}
             <div className="section-card">
                 <div className="section-title">Physical Lot — Tapes / Reels</div>
                 <div className="section-body">
@@ -189,7 +187,6 @@ const Form1 = ({ lotInfo }) => {
                 </div>
             </div>
 
-            {/* 100% INSPECTION */}
             <div className="section-card">
                 <div className="section-title">100% Inspection</div>
                 <div className="section-body">
@@ -214,7 +211,6 @@ const Form1 = ({ lotInfo }) => {
                 </div>
             </div>
 
-            {/* FAILURE REPORT - only shown on FAIL */}
             {result === 'fail' && (
                 <div className="section-card failure-section">
                     <div className="section-title">Failure Report</div>
@@ -232,7 +228,6 @@ const Form1 = ({ lotInfo }) => {
                 </div>
             )}
 
-            {/* REPORT BUTTON */}
             <div className="report-actions">
                 {status && (
                     <div className={`status-message ${status.type === 'success' ? 'status-success' : 'status-error'}`}>
