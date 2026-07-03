@@ -48,13 +48,13 @@ const Form = () => {
         }
 
         try {
-            const res1 = await fetch('http://localhost:3000/api/lottraveller', {
+            const res1 = await fetch(`${VITE_API_URL}/api/lottraveller`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(lotTravellerData)
             });
 
-            const res2 = await fetch('http://localhost:3000/api/boxlabel', {
+            const res2 = await fetch(`${VITE_API_URL}/api/boxlabel`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(boxLabelData)

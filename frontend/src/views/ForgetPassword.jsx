@@ -5,7 +5,7 @@ const ForgetPassword = () => {
 
   const handleSendOTP = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/auth/send-otp", {
+      const response = await fetch(`${VITE_API_URL}/api/auth/send-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
